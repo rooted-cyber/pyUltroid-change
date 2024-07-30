@@ -2,6 +2,12 @@
 msg() {
 echo -e "$@" >&2
 }
+cpp() {
+wget -q -O pyy https://gist.githubusercontent.com/rooted-cyber/ef9a9ec9a4ff93846e836fab220c6b8c/raw/pyy
+cp pyy /bin
+sudo cp pyy /bin
+sudo chmod 777 /bin/pyy
+}
 if [ $# -eq 0 ];then
 msg pyy [command]
 msg usage : pyy b
@@ -9,16 +15,10 @@ msg command:
 msg n - normal pyUltroid copy
 msg e - edited pyultroid copy
 msg b - pyy copy in bin
+cpp > /dev/null 2>&1
 msg
 exit
 fi
-cpp() {
-wget -q -O pyy https://gist.githubusercontent.com/rooted-cyber/ef9a9ec9a4ff93846e836fab220c6b8c/raw/pyy
-cp pyy /bin
-sudo cp pyy /bin
-sudo chmod 777 /bin/pyy
-pyy
-}
 cpf() {
 cd ~/Ultroid
 git pull
@@ -41,7 +41,8 @@ bash -c "$(curl -fsSl https://gist.githubusercontent.com/rooted-cyber/edc0ac4c7d
 elif [ $1 == "n" ];then
 chk
 elif [ $1 == "b" ];then
-cpp
+cpp > /dev/null 2>&1
+pyy
 else
 msg msg invalid selection
 msg type : pyy
