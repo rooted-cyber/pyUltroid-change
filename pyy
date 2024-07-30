@@ -1,0 +1,48 @@
+#!/bin/bash
+msg() {
+echo -e "$@" >&2
+}
+if [ $# -eq 0 ];then
+msg pyy [command]
+msg usage : pyy b
+msg command:
+msg n - normal pyUltroid copy
+msg e - edited pyultroid copy
+msg b - pyy copy in bin
+msg
+exit
+fi
+cpp() {
+wget -q -O pyy https://gist.githubusercontent.com/rooted-cyber/ef9a9ec9a4ff93846e836fab220c6b8c/raw/pyy
+cp pyy /bin
+sudo cp pyy /bin
+sudo chmod 777 /bin/pyy
+pyy
+}
+cpf() {
+cd ~/Ultroid
+git pull
+rm -rf ~/Termux-Ultroid/Ultroid/pyUltroid
+cp -rf pyUltroid ~/Termux-Ultroid/Ultroid
+msg copied normal pyultroid 
+}
+chin() {
+cd ~
+if [ -e Ultroid ];then
+cpf
+else
+git clone https://github.com/TeamUltroid/Ultroid
+cpf
+fi
+}
+chin
+if [ $1 == "e" ];then
+bash -c "$(curl -fsSl https://gist.githubusercontent.com/rooted-cyber/edc0ac4c7da73e933ad954f90c40447e/raw/py)"
+elif [ $1 == "n" ];then
+chk
+elif [ $1 == "b" ];then
+cpp
+else
+msg msg invalid selection
+msg type : pyy
+fi
