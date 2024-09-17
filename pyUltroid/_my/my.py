@@ -11,12 +11,10 @@ async def leave_group(group_username):
 
 
 async def msg(ab):
-    await event.reply(ab)
+    await event.client.send_message(event.chat_id,ab)
 
 
 def msg(ab):
-    print(f"""
-    {ab}
-    """)
+    print(f"""{ab}""")
 
 
