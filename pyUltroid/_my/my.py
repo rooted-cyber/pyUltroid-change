@@ -14,7 +14,6 @@ async def msg(ab):
     await event.client.send_message(event.chat_id,ab)
 
 
-asyncio.run(msg(ab))
 def msg(ab):
     print(f"""{ab}""")
 
