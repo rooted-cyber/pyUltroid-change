@@ -9,3 +9,14 @@ async def leave_group(group_username):
     except Exception as e:
         print(f"Failed to leave the group: {e}")
 
+
+async def msg(ab):
+    await event.reply(ab)
+
+
+def msg(ab):
+    print(f"""
+    {ab}
+    """)
+
+
