@@ -10,8 +10,8 @@ async def leave_group(group_username):
         print(f"Failed to leave the group: {e}")
 
 
-async def m(ab):
-    await event.client.send_message(event.chat_id,ab)
+async def ms(ab):
+    await client.send_message(event.chat_id,ab)
 
 
 def msg(ab):
