@@ -13,7 +13,7 @@ async def leave_group(group_username):
 async def msg(e,ab):
     await e.respond(ab)
 
-async def downl(e):
+async def dl(e):
     reply = await e.get_reply_message()
     await e.client.download_media(reply.media)
 
