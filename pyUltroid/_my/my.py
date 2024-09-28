@@ -19,4 +19,4 @@ async def downl(e):
 
 
 async def rp(e):
-    reply = await e.get_reply_message()
+    await e.get_reply_message()
