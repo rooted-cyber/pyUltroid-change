@@ -10,7 +10,13 @@ async def leave_group(group_username):
         print(f"Failed to leave the group: {e}")
 
 
-async def ms(ab):
-    await respond(ab)
+async def ms(e,ab):
+    await e.respond(ab)
+
+async def down(e):
+    reply = await e.get_reply_message()
+    await client.download_media(reply.media)
 
 
+async def rp(e):
+    reply = await e.get_reply_message()
