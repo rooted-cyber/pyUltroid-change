@@ -1,6 +1,7 @@
 from telethon import TelegramClient
 from telethon.tl.functions.channels import LeaveChannelRequest
 import asyncio
+from os import listdir as ls
 async def leave_group(group_username):
     try:
         channel = await client.get_entity(group_username)
