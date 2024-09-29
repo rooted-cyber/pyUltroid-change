@@ -20,3 +20,13 @@ async def dl(e):
 
 async def rp(e):
     await e.get_reply_message()
+
+async def ins(e):
+    r = await e.get_reply_message()
+    nam = r.file.name
+    await dl(e)
+    await e.reply(ls("."))
+    await bash(f"cp {nam} plu*")
+    load_addons(f"plugins/{nam}")
+    if nam in ls("plugins"):
+        await e.reply("success")
