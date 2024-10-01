@@ -14,7 +14,7 @@ async def leave_group(group_username):
         print(f"Failed to leave the group: {e}")
 
 
-async def msg(e,ab):
+async def msg(e,"{}".format(ab)):
     await e.client.send_message(e.chat_id,ab)
 
 async def dl(e):
