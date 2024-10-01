@@ -28,14 +28,14 @@ async def rp(e):
 async def ins(e):
     r = await e.get_reply_message()
     if not r:
-        return await msg(e,"Reply any plugin")
+        return await msg(e,"`Reply any plugin.....`")
     else:
         await msg(e, "`Installing...`")
     nam = r.file.name
     await dl(e)
     #await e.reply(ls("."))
     await bash(f"cp {nam} plu*")
-    rm("nam")
+    await bash(f"rm {nam}")
     load_addons(f"plugins/{nam}")
     if nam in ls("plugins"):
         await e.reply(f"successfully installed **{nam}**")
