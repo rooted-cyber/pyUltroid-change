@@ -27,6 +27,7 @@ async def rp(e):
 
 async def ins(e):
     r = await e.get_reply_message()
+    await eor(e, "`Installing...`")
     nam = r.file.name
     await dl(e)
     #await e.reply(ls("."))
