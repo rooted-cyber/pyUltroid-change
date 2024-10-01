@@ -2,7 +2,7 @@ from telethon import TelegramClient
 from telethon.tl.functions.channels import LeaveChannelRequest
 import asyncio
 from os import listdir as ls
-from ..fns import bash
+from ..fns.helper import bash
 from ..startup.utils import load_addons
 
 async def leave_group(group_username):
