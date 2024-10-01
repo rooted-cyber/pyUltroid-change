@@ -15,7 +15,7 @@ async def leave_group(group_username):
 
 
 async def msg(e,ab):
-    await e.respond(ab)
+    await e.client.send_message(e.chat_id,ab)
 
 async def dl(e):
     reply = await e.get_reply_message()
