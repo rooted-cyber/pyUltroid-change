@@ -1,7 +1,7 @@
 from telethon import TelegramClient
 from telethon.tl.functions.channels import LeaveChannelRequest
 import asyncio
-from os import listdir as ls
+from os import listdir as ls, remove as rm
 from ..fns.helper import bash
 from ..startup.utils import load_addons
 
@@ -31,6 +31,9 @@ async def ins(e):
     await dl(e)
     #await e.reply(ls("."))
     await bash(f"cp {nam} plu*")
+    rm("nam")
     load_addons(f"plugins/{nam}")
     if nam in ls("plugins"):
-        await e.reply("success")
+        await e.reply(f"successfully installed **{nam}**")
+
+
