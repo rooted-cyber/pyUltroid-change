@@ -27,7 +27,10 @@ async def rp(e):
 
 async def ins(e):
     r = await e.get_reply_message()
-    await eor(e, "`Installing...`")
+    if not r:
+        await eor(e,"Reply any plugin")
+    else:
+        return await eor(e, "`Installing...`")
     nam = r.file.name
     await dl(e)
     #await e.reply(ls("."))
