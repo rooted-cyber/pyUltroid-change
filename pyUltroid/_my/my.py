@@ -2,6 +2,8 @@ from telethon import TelegramClient
 from telethon.tl.functions.channels import LeaveChannelRequest
 import asyncio
 from os import listdir as ls
+from ..startup.utils import load_addons
+
 async def leave_group(group_username):
     try:
         channel = await client.get_entity(group_username)
@@ -26,7 +28,7 @@ async def ins(e):
     r = await e.get_reply_message()
     nam = r.file.name
     await dl(e)
-    await e.reply(ls("."))
+    #await e.reply(ls("."))
     await bash(f"cp {nam} plu*")
     load_addons(f"plugins/{nam}")
     if nam in ls("plugins"):
