@@ -23,7 +23,7 @@ async def dl(e):
         mkdir("plugins-file")
     d = "plugins-file"
     reply = await e.get_reply_message()
-    na = reply.flile.name
+    na = reply.file.name
     await e.client.download_media(reply.media,d)
     await msg(e,f"Download in `plugins-file/{na}`")
 
