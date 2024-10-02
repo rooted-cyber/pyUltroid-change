@@ -16,7 +16,7 @@ async def leave_group(group_username):
 async def msg(e,ab):
     await e.client.send_message(e.chat_id,f"{ab}")
 
-async def dla(e):
+async def dl(e):
     mkdir("plugins-file")
     cd("plugins-file")
     reply = await e.get_reply_message()
@@ -54,7 +54,4 @@ async def photo(e):
       path = await e.client.download_profile_photo("me")
       await e.reply(f"**My profile pic**",file=path)
 
-
-async def await dl():
-    await dla(e)
 
