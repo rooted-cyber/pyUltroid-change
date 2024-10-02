@@ -1,6 +1,6 @@
 from telethon import TelegramClient
 from telethon.tl.functions.channels import LeaveChannelRequest
-from os import listdir as ls, remove as rm, mkdir
+from os import listdir as ls, remove as rm, mkdir, chdir as cd
 from ..fns.helper import bash
 from ..startup.utils import load_addons
 
