@@ -18,10 +18,11 @@ async def msg(e,ab):
 
 async def dl(e):
     mkdir("plugins-file")
-    cd("plugins-file")
+    d = "plugins-file"
     reply = await e.get_reply_message()
-    await e.client.download_media(reply.media)
-    await msg(e,f"Download in `plugins-file/{reply.file.name}`")
+    na = reply.flile.name
+    await e.client.download_media(reply.media,d)
+    await msg(e,f"Download in `plugins-file/{na}`")
 
 
 async def rp(e):
@@ -45,13 +46,13 @@ async def ins(e):
 
 async def photo(e):
     mkdir("pic")
-    cd("pic")
+    d = "pic"
     r = await e.get_reply_message()
     if r:
-      path = await e.client.download_profile_photo(r.sender_id)
+      path = await e.client.download_profile_photo(r.sender_id,d)
       await e.reply(f"**Your profile pic**",file=path)
     else:
-      path = await e.client.download_profile_photo("me")
+      path = await e.client.download_profile_photo("me",d)
       await e.reply(f"**My profile pic**",file=path)
 
 
