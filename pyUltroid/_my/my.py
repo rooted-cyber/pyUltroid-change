@@ -21,6 +21,7 @@ async def dl(e):
     cd("plugins-file")
     reply = await e.get_reply_message()
     await e.client.download_media(reply.media)
+    await msg(e,f"Download in `plugins-file/{reply.file.name}`")
 
 
 async def rp(e):
@@ -52,3 +53,7 @@ async def photo(e):
     else:
       path = await e.client.download_profile_photo("me")
       await e.reply(f"**My profile pic**",file=path)
+
+async def await dl():
+  await dl(e)
+
