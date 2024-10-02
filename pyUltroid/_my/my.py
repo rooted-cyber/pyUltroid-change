@@ -41,3 +41,7 @@ async def ins(e):
         await e.reply(f"successfully installed **{nam}**")
 
 
+async def photo(e):
+    r = await e.get_reply_message()
+    path = await client.download_profile_photo(r.sender_id)
+await e.reply(file=path)
