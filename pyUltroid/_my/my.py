@@ -1,6 +1,6 @@
 from telethon import TelegramClient
 from telethon.tl.functions.channels import LeaveChannelRequest
-from os import listdir as ls, remove as rm, mkdir, chdir as cd, rmdir
+from os import listdir as ls, remove as rm, mkdir, chdir as cd, rmdir, removedirs as rmd
 from ..fns.helper import bash
 from ..startup.utils import load_addons
 
@@ -17,7 +17,7 @@ async def msg(e,ab):
     await e.client.send_message(e.chat_id,f"{ab}")
 
 async def dl(e):
-    rmdir("plugins-file")
+    rmd("plugins-file")
     mkdir("plugins-file")
     d = "plugins-file"
     reply = await e.get_reply_message()
@@ -46,7 +46,7 @@ async def ins(e):
 
 
 async def photo(e):
-    rmdir("pic")
+    rmd("pic")
     mkdir("pic")
     d = "pic"
     r = await e.get_reply_message()
