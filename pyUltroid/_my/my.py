@@ -1,6 +1,6 @@
 from telethon import TelegramClient
 from telethon.tl.functions.channels import LeaveChannelRequest
-from os import listdir as ls, remove as rm
+from os import listdir as ls, remove as rm, mkdir
 from ..fns.helper import bash
 from ..startup.utils import load_addons
 
@@ -17,6 +17,8 @@ async def msg(e,ab):
     await e.client.send_message(e.chat_id,f"{ab}")
 
 async def dl(e):
+    mkdir("plugin/file")
+    cd("plugin/file")
     reply = await e.get_reply_message()
     await e.client.download_media(reply.media)
 
@@ -33,7 +35,7 @@ async def ins(e):
     nam = r.file.name
     await dl(e)
     #await e.reply(ls("."))
-    await bash(f"cp {nam} plu*")
+    await bash(f"cp {nam} ~/Te*d/Ul*/plu*")
     await bash(f"rm {nam}")
     load_addons(f"plugins/{nam}")
     if nam in ls("plugins"):
@@ -41,6 +43,8 @@ async def ins(e):
 
 
 async def photo(e):
+    mkdir("pic")
+    cd("pic")
     r = await e.get_reply_message()
     if r:
       path = await e.client.download_profile_photo(r.sender_id)
