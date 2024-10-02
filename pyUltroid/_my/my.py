@@ -17,8 +17,10 @@ async def msg(e,ab):
     await e.client.send_message(e.chat_id,f"{ab}")
 
 async def dl(e):
-    rmd("plugins-file")
-    mkdir("plugins-file")
+    if "plugins-file":
+        bb = ""
+    else:
+        mkdir("plugins-file")
     d = "plugins-file"
     reply = await e.get_reply_message()
     na = reply.flile.name
@@ -46,8 +48,10 @@ async def ins(e):
 
 
 async def photo(e):
-    rmd("pic")
-    mkdir("pic")
+    if "pic":
+      h = ""
+    else:
+      mkdir("pic")
     d = "pic"
     r = await e.get_reply_message()
     if r:
