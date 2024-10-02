@@ -17,8 +17,8 @@ async def msg(e,ab):
     await e.client.send_message(e.chat_id,f"{ab}")
 
 async def dl(e):
-    mkdir("plugin/file")
-    cd("plugin/file")
+    mkdir("plugins-file")
+    cd("plugins-file")
     reply = await e.get_reply_message()
     await e.client.download_media(reply.media)
 
