@@ -42,5 +42,9 @@ async def ins(e):
 
 async def photo(e):
     r = await e.get_reply_message()
+    if r:
     path = await e.client.download_profile_photo(r.sender_id)
-    await e.reply("h",file=path)
+    await e.reply(f"**Your profile pic**",file=path)
+else:
+    path = await e.client.download_profile_photo("me")
+    await e.reply(f"**My profile pic**",file=path)
