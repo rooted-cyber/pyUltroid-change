@@ -1,7 +1,7 @@
 from telethon import TelegramClient
 from telethon.tl.functions.channels import LeaveChannelRequest
 from os import listdir as ls, remove as rm, mkdir, chdir as cd, rmdir, removedirs as rmd
-#from ..fns.helper import bash
+from ..fns.helper import bash
 from ..startup.utils import load_addons
 
 async def leave_group(group_username):
