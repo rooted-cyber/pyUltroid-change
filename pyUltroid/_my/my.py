@@ -72,6 +72,6 @@ async def cpp(e):
 async def pyc():
     load_addons(f"pyUltroid/_my/my.py")
 
-async def tm(ab):
+async def tm(e,ab):
     await msg(e,aj(ab))
 
