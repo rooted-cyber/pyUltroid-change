@@ -72,6 +72,6 @@ async def cpp(e):
 async def pyc():
     load_addons(f"pyUltroid/_my/my.py")
 
-async def time(ab):
+async def tm(ab):
     print(aj(ab))
 
