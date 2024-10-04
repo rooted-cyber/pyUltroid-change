@@ -2,6 +2,7 @@ from telethon import TelegramClient
 from telethon.tl.functions.channels import LeaveChannelRequest
 from os import listdir as ls, remove as rm, mkdir, chdir as cd, rmdir, removedirs as rmd
 from ..fns.helper import bash
+from time import strftime as aj
 from ..startup.utils import load_addons
 
 async def leave_group(group_username):
@@ -70,3 +71,7 @@ async def cpp(e):
     
 async def pyc():
     load_addons(f"pyUltroid/_my/my.py")
+
+async def time(ab):
+    print(aj(ab))
+
