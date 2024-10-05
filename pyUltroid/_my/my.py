@@ -78,6 +78,6 @@ async def tm(e,ab):
     await msg(e,aj(ab))
 
 async def info(e):
-b = files=await dl(e)
-response = await ak.AkenoPlus().paal_see(f"{b}")
-print(response)
+    b = files=await dl(e)
+    response = await ak.AkenoPlus().paal_see(f"{b}")
+    print(response)
