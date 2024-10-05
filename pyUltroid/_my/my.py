@@ -4,6 +4,8 @@ from os import listdir as ls, remove as rm, mkdir, chdir as cd, rmdir, removedir
 from ..fns.helper import bash
 from time import strftime as aj
 from ..startup.utils import load_addons
+import akenoai as ak
+import json
 
 async def leave_group(group_username):
     try:
@@ -24,9 +26,9 @@ async def dl(e):
         mkdir("plugins-file")
     d = "plugins-file"
     reply = await e.get_reply_message()
-    na = reply.file.name
+    name = reply.file.name
     await e.client.download_media(reply.media,d)
-    await msg(e,f"Download in `plugins-file/{na}`")
+    await msg(e,f"Download in `plugins-file/{name}`")
 
 
 async def rp(e):
@@ -75,3 +77,7 @@ async def pyc():
 async def tm(e,ab):
     await msg(e,aj(ab))
 
+async def info(e):
+b = files=await dl(e)
+response = await ak.AkenoPlus().paal_see(f"{b}")
+print(response)
