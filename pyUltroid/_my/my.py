@@ -77,6 +77,6 @@ async def pyc():
 async def tm(e,ab):
     await msg(e,aj(ab))
 
-async def info():
+async def info(e):
     b = files=await dl(e)
-    response = await ak.AkenoPlus().paal_see(f"{b}")
+    response = await ak.AkenoPlus(e).paal_see(f"{b}")
