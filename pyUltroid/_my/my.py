@@ -13,7 +13,11 @@ async def msg(e,ab):
 async def rif(e,ac):
     r = await e.get_reply_message()
     if r:
-        await msg(e,f"{ac}")
+        print(f"{ac}")
+async def relse(e,ad):
+    r = await e.get_reply_message()
+    if not r:
+        print(f"{ac}")
 
 async def leave_group(group_username):
     try:
@@ -25,6 +29,7 @@ async def leave_group(group_username):
 
 async def dl(e):
     await rif(e,"hi")
+    await relse(e,"ni")
     if "plugins-file":
         bb = ""
     else:
