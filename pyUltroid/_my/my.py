@@ -10,7 +10,7 @@ import json
 async def msg(e,ab):
     await e.client.send_message(e.chat_id,f"{ab}")
 
-async def if(e,ac):
+async def rif(e,ac):
     r = await e.get_reply_message()
     if r:
         await msg(e,f"{ac}")
@@ -24,7 +24,7 @@ async def leave_group(group_username):
         print(f"Failed to leave the group: {e}")
 
 async def dl(e):
-    await if(e,"hi")
+    await rif(e,"hi")
     if "plugins-file":
         bb = ""
     else:
