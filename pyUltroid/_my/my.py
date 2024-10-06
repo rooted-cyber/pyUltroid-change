@@ -24,8 +24,6 @@ async def dl(e):
         bb = ""
     else:
         mkdir("plugins-file")
-    if not reply:
-        print("Reply a file")
     reply = await e.get_reply_message()
     name = reply.file.name
     g = "plugins_file"
