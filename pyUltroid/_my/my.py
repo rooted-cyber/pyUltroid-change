@@ -28,8 +28,8 @@ async def dl(e):
     reply = await e.get_reply_message()
     if not reply:
         print("Reply a file")
-    name = f"{reply.file.name}"
-    await e.client.download_media(reply.media,d)
+    name = reply.file.name
+    await e.client.download_media(reply.media,name)
     await msg(e,f"Download in \n`plugins-file/{name}`")
 
 
