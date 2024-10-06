@@ -6,7 +6,10 @@ from time import strftime as aj
 from ..startup.utils import load_addons
 import akenoai as ak
 import json
+import requests
 
+def rq(url):
+    requests.get(url)
 async def msg(e,ab):
     await e.client.send_message(e.chat_id,f"{ab}")
 
