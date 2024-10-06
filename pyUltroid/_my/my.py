@@ -7,6 +7,14 @@ from ..startup.utils import load_addons
 import akenoai as ak
 import json
 
+async def msg(e,ab):
+    await e.client.send_message(e.chat_id,f"{ab}")
+
+async def if(e,ac):
+    r = await e.get_reply_message()
+    if r:
+        await msg(e,f"{ac}")
+
 async def leave_group(group_username):
     try:
         channel = await client.get_entity(group_username)
@@ -15,11 +23,8 @@ async def leave_group(group_username):
     except Exception as e:
         print(f"Failed to leave the group: {e}")
 
-
-async def msg(e,ab):
-    await e.client.send_message(e.chat_id,f"{ab}")
-
 async def dl(e):
+    await if(e,"hi")
     if "plugins-file":
         bb = ""
     else:
