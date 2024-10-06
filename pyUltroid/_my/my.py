@@ -7,6 +7,10 @@ from ..startup.utils import load_addons
 import akenoai as ak
 import json
 
+def mythumb():
+    mythumb = "resources/downloads/a.jpg"
+
+
 async def leave_group(group_username):
     try:
         channel = await client.get_entity(group_username)
