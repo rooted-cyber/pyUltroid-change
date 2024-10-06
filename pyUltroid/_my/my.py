@@ -17,7 +17,7 @@ async def rif(e,ac):
 async def relse(e,ad):
     r = await e.get_reply_message()
     if not r:
-        print(f"{ac}")
+        print(f"{ad}")
 
 async def leave_group(group_username):
     try:
