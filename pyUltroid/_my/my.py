@@ -30,27 +30,8 @@ async def dl(e):
         print("Reply a file")
     name = reply.file.name
     await e.client.download_media(reply.media,d)
-    await msg(e,f"Download in \n`plugins-file/{name}`")
-
-
-async def rp(e):
-    await e.get_reply_message()
-
-async def ins(e):
-    r = await e.get_reply_message()
-    if not r:
-        return await msg(e,"`Reply any plugin.....`")
-    else:
-        await msg(e, "`Installing...`")
-    nam = r.file.name
-    await dl(e)
-    #await e.reply(ls("."))
-    await bash(f"cp {nam} ~/Te*d/Ul*/plu*")
-    await bash(f"rm {nam}")
-    load_addons(f"plugins/{nam}")
-    if nam in ls("plugins"):
-        await e.reply(f"successfully installed **{nam}**")
-
+    await msg(e,f"Download in \n`plugins-file/{name}")
+    
 
 async def photo(e):
     if "pic":
