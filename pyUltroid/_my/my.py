@@ -8,7 +8,7 @@ import akenoai as ak
 import json
 
 def mythumb():
-    mythumb = "resources/downloads/a.jpg"
+    "resources/downloads/a.jpg"
 
 
 async def leave_group(group_username):
