@@ -7,10 +7,6 @@ from ..startup.utils import load_addons
 import akenoai as ak
 import json
 
-def mythumb():
-    "resources/downloads/a.jpg"
-
-
 async def leave_group(group_username):
     try:
         channel = await client.get_entity(group_username)
@@ -30,9 +26,9 @@ async def dl(e):
         mkdir("plugins-file")
     d = "plugins-file"
     reply = await e.get_reply_message()
-    name = reply.file.name
+    name = f"{reply.file.name}"
     await e.client.download_media(reply.media,d)
-    await msg(e,"{}".format(Download in \n`plugins-file/name`)
+    await msg(e,f"Download in \n`plugins-file/{name}`)
 
 
 async def rp(e):
