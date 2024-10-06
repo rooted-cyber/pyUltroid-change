@@ -24,12 +24,12 @@ async def dl(e):
         bb = ""
     else:
         mkdir("plugins-file")
-    d = "plugins-file"
+    d = "plugins_file"
     reply = await e.get_reply_message()
     if not reply:
         print("Reply a file")
     name = reply.file.name
-    await e.client.download_media(reply.media,name)
+    await e.client.download_media(reply.media,d)
     await msg(e,f"Download in \n`plugins-file/{name}`")
 
 
