@@ -32,7 +32,7 @@ async def dl(e):
     reply = await e.get_reply_message()
     name = reply.file.name
     await e.client.download_media(reply.media,d)
-    await msg(e,f"Download in `plugins-file/{name}`")
+    await msg(e,"{}".format(Download in \n`plugins-file/name`)
 
 
 async def rp(e):
