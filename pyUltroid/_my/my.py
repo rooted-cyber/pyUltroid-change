@@ -75,4 +75,4 @@ async def open(e):
     r = await e.get_reply_message()
     with open(r) as b:
         d = b.read()
-        await e.reply(<pre>d</pre>,parse_mode="html")
+        await e.reply(f"<pre>{d}</pre>",parse_mode="html")
