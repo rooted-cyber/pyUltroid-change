@@ -71,7 +71,7 @@ async def pyc():
 async def tm(e,ab):
     await msg(e,aj(ab))
 
-async def open(e):
+async def op(e):
     r = await e.get_reply_message()
     m = await dl(e)
     with open(m) as b:
