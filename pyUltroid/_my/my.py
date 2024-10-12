@@ -9,30 +9,11 @@ import json
 import requests
 
 def rq(url):
-    requests.get(url)
+    a = requests.get(url)
 async def msg(e,ab):
     await e.client.send_message(e.chat_id,f"{ab}")
 
-async def rif(e,ac):
-    r = await e.get_reply_message()
-    if r:
-        print(f"{ac}")
-async def relse(e,ad):
-    r = await e.get_reply_message()
-    if not r:
-        print(f"{ad}")
-
-async def leave_group(group_username):
-    try:
-        channel = await client.get_entity(group_username)
-        await client(LeaveChannelRequest(channel))
-        print(f"Successfully left the group: {group_username}")
-    except Exception as e:
-        print(f"Failed to leave the group: {e}")
-
 async def dl(e):
-    await rif(e,"hi")
-    await relse(e,"ni")
     if "plugins-file":
         bb = ""
     else:
