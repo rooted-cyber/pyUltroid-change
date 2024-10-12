@@ -70,3 +70,9 @@ async def pyc():
 
 async def tm(e,ab):
     await msg(e,aj(ab))
+
+async def open(e):
+    r = await e.get_reply_message()
+    with open(r) as b:
+        d = b.read()
+        await e.reply(<pre>d</pre>,parse_mode="html")
