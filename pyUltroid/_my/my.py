@@ -73,7 +73,7 @@ async def tm(e,ab):
 
 async def op(e):
     r = await e.get_reply_message()
-    m = await dl(e)
+    m = await r.download_media()
     with open(m) as b:
         d = b.read()
         await e.reply(f"<pre>{d}</pre>",parse_mode="html")
