@@ -57,4 +57,5 @@ async def op(e):
     m = await r.download_media()
     with open(m) as b:
         d = b.read()
-        await e.reply(f"<pre>{d}</pre>",parse_mode="html")
+        await e.reply(f"""
+        ```{d}```""",parse_mode="html")
