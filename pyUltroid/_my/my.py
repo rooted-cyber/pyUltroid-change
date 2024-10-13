@@ -21,8 +21,8 @@ async def dl(e):
     reply = await e.get_reply_message()
     name = reply.file.name
     g = "plugins_file"
-    await e.client.download_media(reply.media,g)
-    await msg(e,f"Download in \n`plugins-file/{name}")
+    await e.client.download_media(reply.media,g/name)
+    await msg(e,f"**Download in** \n`plugins-file/{name}`")
     
 
 async def photo(e):
