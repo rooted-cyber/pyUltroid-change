@@ -21,7 +21,7 @@ async def dl(e):
     reply = await e.get_reply_message()
     name = reply.file.name
     g = "plugins-file"
-    await e.client.download_media(reply.media,name,g)
+    await e.client.download_media(reply.media,name)
     await msg(e,f"**Download in** \n`plugins-file/{name}`")
     
 
