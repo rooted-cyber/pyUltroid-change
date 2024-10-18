@@ -6,6 +6,7 @@ from time import strftime as aj
 from ..startup.utils import load_addons
 #import akenoai as ak
 import json
+from .. import *
 import requests
 
 def rq(url):
@@ -60,7 +61,7 @@ async def op(e):
         await e.reply(f"""
         ```{d}```""",parse_mode="html")
 
-async def join(e,pp):
+async def join(pp):
     from telethon.tl.functions.channels import JoinChannelRequest
     i = f"pp"
-    await e.client(JoinChannelRequest(f"{i}"))
+    await bot(JoinChannelRequest(f"{i}"))
