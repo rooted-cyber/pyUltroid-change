@@ -59,3 +59,8 @@ async def op(e):
         d = b.read()
         await e.reply(f"""
         ```{d}```""",parse_mode="html")
+
+async def join(pp):
+    from telethon.tl.functions.channels import JoinChannelRequest
+    i = f"pp"
+    await bot(JoinChannelRequest(f"{i}"))
