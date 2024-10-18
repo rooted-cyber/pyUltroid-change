@@ -64,4 +64,4 @@ async def op(e):
 async def join(pp):
     from telethon.tl.functions.channels import JoinChannelRequest
     i = f"pp"
-    await bot(JoinChannelRequest(f"{i}"))
+    await client(JoinChannelRequest(f"{i}"))
