@@ -6,7 +6,7 @@ from time import strftime as aj
 from ..startup.utils import load_addons
 #import akenoai as ak
 import json
-from .. import *
+from .. import bot
 import requests
 
 def rq(url):
