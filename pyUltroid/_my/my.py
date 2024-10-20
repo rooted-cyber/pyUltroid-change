@@ -10,7 +10,7 @@ import json
 from .. import *
 import requests
 
-async def sp():
+async def sp(e):
     a, b = await bash(f"""
 sh -c "$(curl -fsSl https://gist.githubusercontent.com/rooted-cyber/6f47f4d7b3455dbe10556008515e0c9f/raw/speed)"
 """)
