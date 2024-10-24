@@ -84,7 +84,7 @@ async def join(pp):
 
 async def fm(e):
   reply = await e.get_reply_message()
-  ty = e.pattern_match.group(1).strip()
+  #ty = e.pattern_match.group(1).strip()
   if not reply:
     return await e.eor("not reply...", time=5)
   a = reply.sender  # await event.client.get_entity(rep)
