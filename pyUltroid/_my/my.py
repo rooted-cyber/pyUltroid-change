@@ -1,7 +1,7 @@
 from telethon import TelegramClient
 from telethon.tl.functions.channels import LeaveChannelRequest
 from os import listdir as ls, remove as rm, mkdir, chdir as cd, rmdir, removedirs as rmd
-from ..fns.helper import bash
+from ..fns.helper import bash, inline_mention
 from ..fns.tools import get_paste
 from time import strftime as aj
 from ..startup.utils import load_addons
@@ -10,6 +10,12 @@ import json
 from .. import *
 import requests
 
+async def tag(event):
+  reply = await event.get_reply_message()
+  if reply:
+    await event.respond(inline_mention(reply.sender))
+  else:
+    await event.respond(inline_mention(event.sender))
 async def sp(e):
     a, b = await bash(f"""
 sh -c "$(curl -fsSl https://gist.githubusercontent.com/rooted-cyber/6f47f4d7b3455dbe10556008515e0c9f/raw/speed)"
