@@ -82,48 +82,17 @@ async def join(pp):
     await bot(JoinChannelRequest(f"{i}"))
 
 
-async def pst(event):
-    try:
-        input_str = event.text.split(maxsplit=1)[1]
-    except IndexError:
-        input_str = None
-    xx = await event.eor("` 《 Pasting... 》 `")
-    downloaded_file_name = None
-    if input_str:
-        message = input_str
-    elif event.reply_to_msg_id:
-        previous_message = await event.get_reply_message()
-        if previous_message.media:
-            downloaded_file_name = await event.client.download_media(
-                previous_message,
-                "./resources/downloads",
-            )
-            with open(downloaded_file_name, "r") as fd:
-                message = fd.read()
-            os.remove(downloaded_file_name)
-        else:
-            message = previous_message.message
-    else:
-        message = None
-    if not message:
-        return await xx.eor(
-            "`Reply to a Message/Document or Give me Some Text !`", time=5
-        )
-    done, key = await get_paste(message)
-    if not done:
-        return await xx.eor(key)
-    link = f"https://spaceb.in/{key}"
-    raw = f"https://spaceb.in/api/v1/documents/{key}/raw"
-    reply_text = (
-        f"• **Pasted to SpaceBin :** [Space]({link})\n• **Raw Url :** : [Raw]({raw})"
-    )
-    try:
-        if event.client._bot:
-            return await xx.eor(reply_text)
-        ok = await event.client.inline_query(asst.me.username, f"pasta-{key}")
-        await ok[0].click(event.chat_id, reply_to=event.reply_to_msg_id, hide_via=True)
-        await xx.delete()
-    except BaseException as e:
-        LOGS.exception(e)
-        await xx.edit(reply_text)
-
+async def fm(e):
+  reply = await e.get_reply_message()
+  ty = e.pattern_match.group(1).strip()
+  if not reply:
+    return await e.eor("not reply...", time=5)
+  a = reply.sender  # await event.client.get_entity(rep)
+  b = a.first_name
+  l = a.last_name or ""
+  u = ("@" + a.username) if a.username else "???"
+  ph = a.phone
+  fr = "First_name: ", "`",a.first_name,"`"
+  las = "Last Name: ", "`",a.last_name,"`"
+  pic = file=await photo(e)
+  await reply.respond(f"{pic}\nFirst Name: `{b}`\nLast Name: `{l}`\nnUsername: `{u}`\nPhone: `+{ph}`\n\n{fr}\n{las}")
