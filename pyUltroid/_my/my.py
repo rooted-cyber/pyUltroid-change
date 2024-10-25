@@ -8,7 +8,7 @@ from ..startup.utils import load_addons
 #import akenoai as ak
 import json
 from .. import *
-from .. import bot
+#from .. import bot
 import requests
 
 async def tag(event):
@@ -55,7 +55,7 @@ async def photo(e):
     else:
       path = await e.client.download_profile_photo("me")
       await e.reply(f"**My profile pic**",file=path)
-
+    rm("path")
 
 async def cpp(e):
   c = await e.eor(f"`processing`")
