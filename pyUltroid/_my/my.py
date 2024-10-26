@@ -52,10 +52,11 @@ async def photo(e):
     if r:
       path = await e.client.download_profile_photo(r.sender_id)
       await e.reply(f"**Your profile pic**",file=path)
+      rm("path")
     else:
       path = await e.client.download_profile_photo("me")
       await e.reply(f"**My profile pic**",file=path)
-    rm("path")
+      rm("path")
 
 async def cpp(e):
   c = await e.eor(f"`processing`")
