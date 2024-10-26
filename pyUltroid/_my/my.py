@@ -96,5 +96,5 @@ async def fm(e):
   ph = a.phone
   fr = "First_name: ", "`",a.first_name,"`"
   las = "Last Name: ", "`",a.last_name,"`"
-  pic = file=await photo(e)
-  await reply.respond(f"\nFirst Name: `{b}`\nLast Name: `{l}`\nUsername: `{u}`\nPhone: `+{ph}`\n\n{fr}\n{las}")
+  pic = await photo(e)
+  await reply.respond(f"\nFirst Name: `{b}`\nLast Name: `{l}`\nUsername: `{u}`\nPhone: `+{ph}`\n\n{fr}\n{las}",file=pic)
