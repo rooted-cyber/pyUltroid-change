@@ -4,9 +4,9 @@
 # This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
 # <https://github.com/TeamUltroid/pyUltroid/blob/main/LICENSE>.
-import dns.resolver
-dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
-dns.resolver.default_resolver.nameservers=['8.8.8.8']
+#import dns.resolver
+#dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
+#dns.resolver.default_resolver.nameservers=['8.8.8.8']
 from telethon import events, types
 from pymongo import MongoClient
 
