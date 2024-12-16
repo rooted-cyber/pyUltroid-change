@@ -346,9 +346,8 @@ def UltroidDB():
         elif psycopg2:
             return SqlDB(Var.DATABASE_URL)
         else:
-            LOGS.critical(
-                "No DB requirement fullfilled!\nPlease install redis, mongo or sql dependencies...\nTill then using local file as database."
-            )
+            print("Bot start")
+            #LOGS.critical("No DB requirement fullfilled!\nPlease install redis, mongo or sql dependencies...\nTill then using local file as database.")
             return LocalDB()
     except BaseException as err:
         LOGS.exception(err)
