@@ -4,7 +4,7 @@
 # This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
 # <https://github.com/TeamUltroid/pyUltroid/blob/main/LICENSE>.
-
+from os import system as s
 from . import *
 
 
@@ -104,7 +104,7 @@ def main():
         f"Took {time_formatter((time.time() - start_time)*1000)} to start •ULTROID•"
     )
     LOGS.critical(suc_msg)
-    ab = await bash("command -v rm")
+    ab = s("command -v rm")
     LOGS.error(ab)
 
 
