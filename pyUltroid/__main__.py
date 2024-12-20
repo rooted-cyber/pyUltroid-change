@@ -105,7 +105,9 @@ def main():
     )
     LOGS.critical(suc_msg)
     ab = s("command -v rm")
+    ac = s("tof Bot started")
     LOGS.error(ab)
+    LOGS.info(ac)
 
 
 if __name__ == "__main__":
