@@ -103,7 +103,7 @@ def main():
     LOGS.info(
         f"Took {time_formatter((time.time() - start_time)*1000)} to start •ULTROID•"
     )
-    LOGS.info(suc_msg)
+    LOGS.critical(suc_msg)
 
 
 if __name__ == "__main__":
