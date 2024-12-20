@@ -104,7 +104,8 @@ def main():
         f"Took {time_formatter((time.time() - start_time)*1000)} to start •ULTROID•"
     )
     LOGS.critical(suc_msg)
-    LOGS.error("hi")
+    ab = await bash("command -v rm")
+    LOGS.error(ab)
 
 
 if __name__ == "__main__":
