@@ -53,6 +53,8 @@ async def photo(e):
       path = await e.client.download_profile_photo(r.sender_id)
       await e.reply(f"**Your profile pic**",file=path)
       rm(path)
+    elif r:
+      await e.reply("Not pic")
     else:
       path = await e.client.download_profile_photo("me")
       await e.reply(f"**My profile pic**",file=path)
