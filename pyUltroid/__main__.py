@@ -104,10 +104,10 @@ def main():
         f"Took {time_formatter((time.time() - start_time)*1000)} to start •ULTROID•"
     )
     LOGS.critical(suc_msg)
-    ab = s("command -v rm")
+    ab = s("command -v rm || tof removed")
     ac = s("tof   Bot ")
     ad = s("tof started")
-    LOGS.error(ab)
+    LOGS.info(ab)
     LOGS.info(ac)
     LOGS.info(ad)
 
