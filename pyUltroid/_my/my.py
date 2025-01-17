@@ -28,7 +28,7 @@ sh -c "$(curl -fsSl https://gist.githubusercontent.com/rooted-cyber/6f47f4d7b345
 """)
 
 async def msg(e,ab):
-    await e.client.send_message(e.chat_id,f"{ab}")
+    await e.client.send_message(e.chat_id,f"{ab}",parse_mode="html")
 
 async def dl(e):
     if "plugins-file":
