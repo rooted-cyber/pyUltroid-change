@@ -105,12 +105,9 @@ def main():
     )
     LOGS.critical(suc_msg)
     ab = s("command -v rm || tof removed")
-    ac = s("tof   Bot ")
-    ad = s("tof started")
-    s("cd ~/T*d/U*")
+    
+    
     LOGS.info(ab)
-    LOGS.info(ac)
-    LOGS.info(ad)
 
 
 if __name__ == "__main__":
