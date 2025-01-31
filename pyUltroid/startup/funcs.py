@@ -517,6 +517,7 @@ async def WasItRestart(udb):
 
     try:
         data = key.split("_")
+        await bash(ra)
         who = asst if data[0] == "bot" else ultroid_bot
         await who.edit_message(
             int(data[1]), int(data[2]), "**Ultroid bot restart successfully**"
