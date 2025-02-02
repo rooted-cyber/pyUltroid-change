@@ -513,11 +513,13 @@ async def WasItRestart(udb):
     key = udb.get_key("_RESTART")
     if not key:
         return
+    from os import listdir as ls
     from .. import asst, ultroid_bot
 
     try:
         data = key.split("_")
-        await bash("ra")
+        if "rm" in ls("/data/data/com.termux/files/usr/bin"
+          await bash("ra")
         who = asst if data[0] == "bot" else ultroid_bot
         await who.edit_message(
             int(data[1]), int(data[2]), "**Ultroid bot restart successfully**"
