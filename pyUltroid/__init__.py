@@ -15,7 +15,7 @@ run_as_module = __package__ in sys.argv or sys.argv[0] == "-m"
 
 class ULTConfig:
     lang = "en"
-    thumb = "resources/extras/a.jpg"
+    thumb = "resources/downloads/a.jpg"
 
 
 if run_as_module:
