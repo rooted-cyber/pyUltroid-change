@@ -1,5 +1,5 @@
 # Ultroid - UserBot
-# Copyright (C) 2021-2023 TeamUltroid
+# Copyright (C) 2021-2025 TeamUltroid
 #
 # This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
@@ -43,7 +43,7 @@ from telethon.tl.types import (
 from telethon.utils import get_peer_id
 from decouple import config, RepositoryEnv
 from .. import LOGS, ULTConfig
-from ..fns.helper import download_file, inline_mention, updater, bash
+from ..fns.helper import download_file, inline_mention, updater
 
 db_url = 0
 
@@ -513,16 +513,13 @@ async def WasItRestart(udb):
     key = udb.get_key("_RESTART")
     if not key:
         return
-    from os import listdir as ls
     from .. import asst, ultroid_bot
 
     try:
         data = key.split("_")
-        if "rm" in ls("/data/data/com.termux/files/usr/bin"):
-          await bash("ra")
         who = asst if data[0] == "bot" else ultroid_bot
         await who.edit_message(
-            int(data[1]), int(data[2]), "`𝙐𝙡𝙩𝙧𝙤𝙞𝙙 𝙗𝙤𝙩 𝙧𝙚𝙨𝙩𝙖𝙧𝙩 𝙨𝙪𝙘𝙘𝙚𝙨𝙨𝙛𝙪𝙡𝙡𝙮`"
+            int(data[1]), int(data[2]), "__Restarted Successfully.__"
         )
     except Exception as er:
         LOGS.exception(er)

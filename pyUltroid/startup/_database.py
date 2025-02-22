@@ -1,16 +1,10 @@
 # Ultroid - UserBot
-# Copyright (C) 2021-2023 TeamUltroid
+# Copyright (C) 2021-2025 TeamUltroid
 #
 # This file is a part of < https://github.com/TeamUltroid/Ultroid/ >
 # PLease read the GNU Affero General Public License in
 # <https://github.com/TeamUltroid/pyUltroid/blob/main/LICENSE>.
-#import dns.resolver
-#dns.resolver.default_resolver=dns.resolver.Resolver(configure=False)
-#dns.resolver.default_resolver.nameservers=['8.8.8.8']
-#from telethon import events, types
-#from pymongo import MongoClient
 
-# MongoDB setup
 import ast
 import os
 import sys
@@ -346,8 +340,9 @@ def UltroidDB():
         elif psycopg2:
             return SqlDB(Var.DATABASE_URL)
         else:
-            print("Bot start")
-            #LOGS.critical("No DB requirement fullfilled!\nPlease install redis, mongo or sql dependencies...\nTill then using local file as database.")
+            LOGS.critical(
+                "No DB requirement fullfilled!\nPlease install redis, mongo or sql dependencies...\nTill then using local file as database."
+            )
             return LocalDB()
     except BaseException as err:
         LOGS.exception(err)
