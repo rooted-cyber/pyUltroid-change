@@ -60,6 +60,7 @@ class _BaseDatabase:
         self._cache.update({key: value})
         return value
 
+    
     def re_cache(self):
         self._cache.clear()
         for key in self.keys():
@@ -341,7 +342,7 @@ def UltroidDB():
             return SqlDB(Var.DATABASE_URL)
         else:
             LOGS.critical(
-                "No DB requirement fullfilled!\nPlease install redis, mongo or sql dependencies...\nTill then using local file as database."
+                "No Redis found"
             )
             return LocalDB()
     except BaseException as err:
