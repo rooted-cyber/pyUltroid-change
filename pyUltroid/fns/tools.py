@@ -393,8 +393,8 @@ async def get_paste(data: str, extension: str = "txt"):
         url = "https://spaceb.in/api/"
         res = await async_searcher(url, json={"content": data, "extension": extension}, post=True, re_json=True)
         return True, {
-            "link": f"https://spaceb.in/{res['payload']['id']}",
-            "raw": f"https://spaceb.in/{res['payload']['id']}/raw"
+            "link": f"[Spacebin](https://spaceb.in/{res['payload']['id']})",
+            "raw": f"[Raw](https://spaceb.in/{res['payload']['id']}/raw)"
         }
     except Exception:
         try:
