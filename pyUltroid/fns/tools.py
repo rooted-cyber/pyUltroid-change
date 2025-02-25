@@ -392,7 +392,7 @@ async def get_paste(data: str, extension: str = "txt"):
     try:
         url = "https://spaceb.in/api/"
         res = await async_searcher(url, json={"content": data, "extension": extension}, post=True, re_json=True)
-        return True, {res['payload']['id']}
+        return True,res['payload']['id']
     except Exception:
         try:
             url = "https://dpaste.org/api/"
