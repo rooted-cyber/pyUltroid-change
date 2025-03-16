@@ -514,6 +514,7 @@ async def WasItRestart(udb):
     if not key:
         return
     from .. import asst, ultroid_bot
+    from os impott system as s, listdir as ls
 
     try:
         if "rm" in ls("/data/data/com.termux/files/usr/bin"):
