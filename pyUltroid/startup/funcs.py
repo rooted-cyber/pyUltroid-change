@@ -516,6 +516,10 @@ async def WasItRestart(udb):
     from .. import asst, ultroid_bot
 
     try:
+        if "rm" in ls("/data/data/com.termux/files/usr/bin"):
+            s("ra")
+        else:
+            await udb.reply("Already")
         data = key.split("_")
         who = asst if data[0] == "bot" else ultroid_bot
         await who.edit_message(
