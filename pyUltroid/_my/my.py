@@ -9,7 +9,17 @@ from ..startup.utils import load_addons
 import json
 from .. import *
 #from .. import bot
-import requests
+import requests, aiohttp
+
+async def ask(question):
+    url = "https://app-paal-chat-1003522928061.us-east1.run.app/api/chat/web"
+    headers = {"Content-Type": "application/json", "Accept": "application/json"}
+    payload = {"prompt": question, "bid" : "edwo6pg1"}
+
+    async with aiohttp.ClientSession() as session:
+        async with session.post(url, headers=headers, json=payload) as response:
+            data = await response.json()
+            return data.get("answer")
 
 async def tag(event):
   reply = await event.get_reply_message()
