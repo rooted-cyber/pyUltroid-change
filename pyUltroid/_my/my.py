@@ -1,4 +1,5 @@
 from telethon import TelegramClient
+from io import BytesIO
 from telethon.tl.functions.channels import LeaveChannelRequest
 from os import listdir as ls, remove as rm, mkdir, chdir as cd, rmdir, removedirs as rmd
 from ..fns.helper import bash, inline_mention
@@ -11,7 +12,7 @@ from .. import *
 #from .. import bot
 import requests, aiohttp
 
-async def ask(question):
+async def aski(question):
     url = "https://app-paal-chat-1003522928061.us-east1.run.app/api/chat/web"
     headers = {"Content-Type": "application/json", "Accept": "application/json"}
     payload = {"prompt": question, "bid" : "edwo6pg1"}
@@ -21,6 +22,17 @@ async def ask(question):
             data = await response.json()
             return data.get("answer")
 
+async def ask(e):
+    response = await aski(question)
+    pb = "•••••••••••••••••••••"
+    try:
+      out = f"{pb}  **𝘄𝗲𝗯** {pb}\n\n~ `{question}`\n\n{pb}•••••••{pb}\n\n ~ **{response}**"
+      await e.edit(f"{out}",parse_mode="md")
+    except:
+      with BytesIO(out.encode()) as outf:
+            outf.name = "answer.txt"
+            await e.respond(file=outf, reply_to=e.reply_to_msg_id)
+      
 async def tag(event):
   reply = await event.get_reply_message()
   if reply:
