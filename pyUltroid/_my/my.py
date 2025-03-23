@@ -22,7 +22,7 @@ async def aski(question):
             data = await response.json()
             return data.get("answer")
 
-async def ask(e):
+async def ask(e,question):
     response = await aski(question)
     pb = "•••••••••••••••••••••"
     try:
