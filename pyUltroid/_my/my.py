@@ -27,7 +27,7 @@ async def ask(e,question):
     pb = "•••••••••••••••••••••"
     try:
       out = f"{pb}  **𝘄𝗲𝗯** {pb}\n\n~ `{question}`\n\n{pb}•••••••{pb}\n\n ~ **{response}**"
-      await e.edit(f"{out}",parse_mode="md")
+      await e.reply(f"{out}",parse_mode="md")
     except:
       with BytesIO(out.encode()) as outf:
             outf.name = "answer.txt"
