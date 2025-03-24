@@ -28,7 +28,8 @@ if run_as_module:
     from .startup.connections import validate_session, vc_connection
     from .startup.funcs import _version_changes, autobot, enable_inline, update_envs
     from .version import ultroid_version
-
+    import logging
+    logging.getLogger("Telethon").setLevel(logging.WARNING)
     if not os.path.exists("./plugins"):
         LOGS.error(
             "'plugins' folder not found!\nMake sure that, you are on correct path."
