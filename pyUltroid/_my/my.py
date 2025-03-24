@@ -12,10 +12,10 @@ from .. import *
 #from .. import bot
 import requests, aiohttp
 
-async def fix(e):
+async def wrk():
     import logging
     logging.getLogger("Telethon").setLevel(logging.WARNING)
-    await e.reply("fixed")
+    print("working")
 async def aski(question):
     url = "https://app-paal-chat-1003522928061.us-east1.run.app/api/chat/web"
     headers = {"Content-Type": "application/json", "Accept": "application/json"}
