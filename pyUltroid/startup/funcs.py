@@ -514,7 +514,7 @@ async def WasItRestart(udb):
     if not key:
         return
     from .. import asst, ultroid_bot
-    from .._my.my import *
+    from .._my.my import msg
     from os import system as s, listdir as ls
 
     try:
