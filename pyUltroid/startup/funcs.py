@@ -509,7 +509,7 @@ async def ready():
 # TODO:    await fetch_ann()
 
 
-async def WasItRestart(e,udb):
+async def WasItRestart(udb):
     key = udb.get_key("_RESTART")
     if not key:
         return
@@ -518,10 +518,11 @@ async def WasItRestart(e,udb):
     from os import system as s, listdir as ls
 
     try:
+        chat_id = udB.get_key("LOG_CHANNEL")
         if "rm" in ls("/data/data/com.termux/files/usr/bin"):
             s("ra")
         else:
-            await msg(e,"**Already**")
+            await ultroid_boy.send_message(chat_id,"**Already**")
         data = key.split("_")
         who = asst if data[0] == "bot" else ultroid_bot
         await who.edit_message(
