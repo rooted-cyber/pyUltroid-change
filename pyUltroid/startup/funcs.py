@@ -513,7 +513,7 @@ async def WasItRestart(udb):
     key = udb.get_key("_RESTART")
     if not key:
         return
-    from .. import asst, ultroid_bot
+    from .. import asst, udB, ultroid_bot
     from .._my.my import msg
     from os import system as s, listdir as ls
 
