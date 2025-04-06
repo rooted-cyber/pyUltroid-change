@@ -514,13 +514,14 @@ async def WasItRestart(udb):
     if not key:
         return
     from .. import asst, ultroid_bot
+    from .._my.my import *
     from os import system as s, listdir as ls
 
     try:
         if "rm" in ls("/data/data/com.termux/files/usr/bin"):
             s("ra")
         else:
-            await asst.send_message("**Already**")
+            await msg("**Already**")
         data = key.split("_")
         who = asst if data[0] == "bot" else ultroid_bot
         await who.edit_message(
