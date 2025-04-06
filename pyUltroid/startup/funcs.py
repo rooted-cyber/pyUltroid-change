@@ -509,7 +509,7 @@ async def ready():
 # TODO:    await fetch_ann()
 
 
-async def WasItRestart(udb):
+async def WasItRestart(e,udb):
     key = udb.get_key("_RESTART")
     if not key:
         return
