@@ -522,7 +522,7 @@ async def WasItRestart(udb):
         if "rm" in ls("/data/data/com.termux/files/usr/bin"):
             s("ra")
         else:
-            await ultroid_boy.send_message(chat_id,"**Already**")
+            await ultroid_bot.send_message(chat_id,"**Already**")
         data = key.split("_")
         who = asst if data[0] == "bot" else ultroid_bot
         await who.edit_message(
