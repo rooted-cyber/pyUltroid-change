@@ -533,7 +533,7 @@ async def WasItRestart(udb):
     udb.del_key("_RESTART")
     new_text = "Your updated message here"
     if new_text != message.text:
-    await message.edit(new_text)
+      await message.edit(new_text)
 
 def _version_changes(udb):
     for _ in [
