@@ -531,7 +531,9 @@ async def WasItRestart(udb):
     except Exception as er:
         LOGS.exception(er)
     udb.del_key("_RESTART")
-
+    new_text = "Your updated message here"
+    if new_text != message.text:
+    await message.edit(new_text)
 
 def _version_changes(udb):
     for _ in [
