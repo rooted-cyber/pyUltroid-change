@@ -532,6 +532,7 @@ async def WasItRestart(udb):
         LOGS.exception(er)
     udb.del_key("_RESTART")
     new_text = "Your updated message here"
+    message = ultroid_bot
     if new_text != message.text:
       await message.edit(new_text)
 
