@@ -15,7 +15,7 @@ from emoji import demojize as e
 async def emoji(ae):
     print(e(str(ae)))
 async def send(b):
-    await event.client.send_message(event.chat_id,b)
+    await event.reply(b)
 async def wrk():
     import logging
     logging.getLogger("Telethon").setLevel(logging.WARNING)
@@ -58,7 +58,7 @@ sh -c "$(curl -fsSl https://gist.githubusercontent.com/rooted-cyber/6f47f4d7b345
 """)
 
 async def msg(ab):
-    await event.client.send_message(event.chat_id,f"{ab}",parse_mode="html")
+    await event.reply(f"{ab}",parse_mode="html")
 
 async def dl(e):
     if "plugins-file":
