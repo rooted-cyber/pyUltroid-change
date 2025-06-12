@@ -12,8 +12,8 @@ from .. import *
 #from .. import bot
 import requests, aiohttp
 from emoji import demojize as e
-async def emoji(e):
-    print(e(e))
+async def emoji(ae):
+    print(e(ae))
 async def send(e,a,b):
     await e.client.send_message(a,b)
 async def wrk():
