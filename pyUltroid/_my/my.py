@@ -57,8 +57,8 @@ sh -c "$(curl -fsSl https://gist.githubusercontent.com/rooted-cyber/6f47f4d7b345
 `{a}`
 """)
 
-async def msg(ab):
-    await event.reply(f"{ab}",parse_mode="html")
+async def msg(e,ab):
+    await e.reply(f"{ab}",parse_mode="md")
 
 async def dl(e):
     if "plugins-file":
@@ -108,7 +108,7 @@ async def op(e):
     with open(m) as b:
         d = b.read()
         await e.reply(f"""
-        ```{d}```""",parse_mode="html")
+        ```{d}```""",parse_mode="md")
 
 async def join(pp):
     from telethon.tl.functions.channels import JoinChannelRequest
