@@ -1,7 +1,7 @@
 from telethon import TelegramClient
 from io import BytesIO
 from telethon.tl.functions.channels import LeaveChannelRequest
-from os import listdir as ls, remove as rm, mkdir, chdir as cd, rmdir, removedirs as rmd
+from os import system as s, listdir as ls, remove as rm, mkdir, chdir as cd, rmdir, removedirs as rmd
 from ..fns.helper import bash, inline_mention
 from ..fns.tools import get_paste
 from time import strftime as aj
@@ -14,7 +14,7 @@ import requests, aiohttp
 try:
     from emoji import demojize as e
 except:
-    pp i emoji
+    s("pp i emoji")
 async def emoji(ae):
     print(e(str(ae)))
 async def send(b):
