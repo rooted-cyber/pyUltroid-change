@@ -11,7 +11,10 @@ import json
 from .. import *
 #from .. import bot
 import requests, aiohttp
-from emoji import demojize as e
+try:
+    from emoji import demojize as e
+except:
+    pp i emoji
 async def emoji(ae):
     print(e(str(ae)))
 async def send(b):
