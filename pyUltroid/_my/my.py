@@ -1,6 +1,6 @@
 from telethon import TelegramClient
 from io import BytesIO
-from telethon.tl.functions.channels import LeaveChannelRequest
+from telethon.tl.functions.channels import LeaveChannelRequest, JoinChannelRequest
 from os import system as s, listdir as ls, remove as rm, mkdir, chdir as cd, rmdir, removedirs as rmd
 from ..fns.helper import bash, inline_mention
 from ..fns.tools import get_paste
@@ -113,10 +113,10 @@ async def op(e):
         await e.reply(f"""
         ```{d}```""",parse_mode="md")
 
-async def join(pp):
+async def join(e,pp):
     from telethon.tl.functions.channels import JoinChannelRequest
     i = f"pp"
-    await bot(JoinChannelRequest(f"{i}"))
+    await e.client(JoinChannelRequest(f"{i}"))
 
 
 async def fm(e):
