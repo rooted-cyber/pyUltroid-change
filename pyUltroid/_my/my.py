@@ -47,7 +47,7 @@ async def ask(e,question):
 async def tag(event):
   reply = await event.get_reply_message()
   if reply:
-    await event.respond(inline_mention(reply.sender))
+    await event.respond(inline_mention(reply.sender_id))
   else:
     await event.respond(inline_mention(event.sender))
 async def sp(e):
